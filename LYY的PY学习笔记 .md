@@ -783,5 +783,22 @@ Thu => Weekday.Thu
 Fri => Weekday.Fri
 Sat => Weekday.Sat
 ```
+## 元类  
+type()函数可以返回一个对象的类型。
+也可以使用type()函数创建新的类型。  
+```python
+>>> def fn(self, name='world'): # 先定义函数
+...     print('Hello, %s.' % name)
+...
+# type(classname, 继承父类集合, )
+>>> Hello = type('Hello', (object,), dict(hello=fn)) # 创建Hello class
+>>> h = Hello()
+>>> h.hello()
+Hello, world.
+>>> print(type(Hello))
+<class 'type'>
+>>> print(type(h))
+<class '__main__.Hello'>
+```  
 
 
